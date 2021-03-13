@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+@font-face {
+    font-family: "font-1";
+    src: url(./asset/font-1.ttf);
+}
+
+body{
+    font-family: "font-1", serif;
+    background: url(/HTML_CSS/BaseCSS/asset/bg.jpg) fixed center/cover no-repeat;
+}
+
+h1{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    font-family: "font-1" sans-serif;
+    text-shadow: 4px 5px 4px #853011b5;
+}
+
+.flexbox,
+.grid{
+    border: 2px solid skyblue;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px; 
+}
+
+/************** Flexbox ****************/
+
+.flexbox{
+    display: flex;
+    justify-content: space-around;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 160px;
+    width: 160px;
+    background-color: rgb(170, 78, 78);    
+}
+
+/****************** Grid ***************/
+
+.formulaire{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding: 20px;
+}
+
+form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+        'i1 i2'
+        'ta ta'
+        'bt bt';
+}
+
+input,
+textarea{
+    margin: 5px;
+    height: 45px;
+    border: 1px solid darkblue;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+#surname{
+    grid-area: i1;
+}
+#firstname{
+    grid-area: i2;
+}
+textarea {
+    grid-area: ta;
+    resize: none;
+}
+input[type="submit"]{
+    grid-area: bt;
+    cursor: pointer;
+    background: cyan;
+    transition: 0.4s;
+}
+
+input[type="submit"]:hover{
+    background: darkblue;
+    color: white;
+}
